@@ -11,12 +11,12 @@ const COLLECTON_NAME = 'shops'
 // Declare the Schema of the Mongo model
 var shopSchema = new mongoose.Schema({
     name:{
-        type:String,
+        type: String,
         trim: true,
         maxLength: 150
     },
     email:{
-        type:String,
+        type: String,
         trim:true,
         unique:true,
     },
@@ -43,4 +43,4 @@ var shopSchema = new mongoose.Schema({
 });
 
 //Export the model
-module.exports = mongoose.model('DOCUMENT_NAME', shopSchema);
+module.exports = mongoose.model(DOCUMENT_NAME, shopSchema);

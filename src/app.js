@@ -14,6 +14,10 @@ const app = express();
 app.use(morgan("dev"))//co 5 loai
 app.use(helmet())
 app.use(compression())
+app.use(express.json())
+app.use(express.urlencoded({
+    extended: true
+}))
 //ngan ben thu 3 doc cookie
 
 //init database
@@ -29,8 +33,24 @@ require('./dbs/init.mongodb.js');
 
 app.use('/', require('./routes'))
 
-//handling error
+//Handling error
 
+app.use( ( req, res, next ) => {
+    const error = new Error('Not Found')
+    error.status = 404
+    console.log("Handle 1")
+    next(error)
+})
+
+app.use( ( error, req, res, next ) => {
+    const statusCode = error.status || 500
+    console.log(error)
+    return res.status(statusCode).json({
+        status: 'error',
+        code: statusCode ,
+        message: error.message || 'Internal Server Error'
+    })
+})
 
 
 module.exports = app;
