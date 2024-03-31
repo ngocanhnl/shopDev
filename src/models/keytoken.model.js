@@ -21,11 +21,11 @@ var keyTokenSchema = new Schema({
         type:String,
         required:true,
     },
-    refeshTokensUsed:{
+    refreshTokensUsed:{
         type: Array,
         default: []
     },
-    refeshToken: {
+    refreshToken: {
         type: String,
         require: true
     }
