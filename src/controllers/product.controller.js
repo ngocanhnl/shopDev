@@ -26,6 +26,16 @@ class ProductController {
             })
         }).send(res)
     }
+    updateProduct = async ( req, res, next ) => {
+        console.log('update product controller')
+        new SuccessResponse({
+            message: 'update product success',
+            metadata: await ProductServiceV2.updateProduct(req.body.product_type, req.params.productId,{
+                ...req.body,
+                product_shop: req.user.userId
+            })
+        }).send(res)
+    }
     publishProductByShop = async ( req, res, next ) => {
         new SuccessResponse({
             message: 'update publish product success',
@@ -59,16 +69,33 @@ class ProductController {
             metadata: await ProductServiceV2.findAllDraftForShop({product_shop: req.user.userId})
         }).send(res)
     }
+
     getAllPublishForShop = async ( req, res, next ) => {
         new SuccessResponse({
             message: 'get all publish success',
             metadata: await ProductServiceV2.findAllPublishForShop({product_shop: req.user.userId})
         }).send(res)
     }
+
     getListSearchProduct = async ( req, res, next ) => {
         new SuccessResponse({
             message: 'get all getListSearchProduct success',
             metadata: await ProductServiceV2.searchProduct(req.params)
+        }).send(res)
+    }
+
+    findAllProducts = async ( req, res, next ) => {
+        new SuccessResponse({
+            message: 'get all findAllProducts success',
+            metadata: await ProductServiceV2.findAllProducts(req.query)
+        }).send(res)
+    }
+    findProduct = async ( req, res, next ) => {
+        new SuccessResponse({
+            message: 'get all findProduct success',
+            metadata: await ProductServiceV2.findProduct({
+                product_id: req.params.product_id
+            })
         }).send(res)
     }
 
