@@ -11,7 +11,7 @@ const COLLECTON_NAME = 'discounts'
 const discountSchema = new Schema({
     discount_name: {type: String, required: true},
     discount_description: {type: String, required: true},
-    discount_type: {type: String, default: 'fixed amount'},//percentage
+    discount_type: {type: String, default: 'fixed_amount'},//percentage
     discount_value: {type: Number, required: true},//10.000 || 10(%)
     discount_code: {type: String, required: true},
     discount_start_date: {type: Date, required: true}, //Ngay bat dau
