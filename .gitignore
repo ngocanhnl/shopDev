@@ -24,5 +24,3 @@ yarn-debug.log*
 yarn-error.log*
 
 
-/src/services/redis.service.js
-/src/loggers/discordV2.log.js
