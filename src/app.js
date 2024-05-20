@@ -20,6 +20,15 @@ app.use(express.urlencoded({
 }))
 //ngan ben thu 3 doc cookie
 
+
+
+//test pub-sub redis
+// require('./tests/inventory.test.js')
+// const productTest = require('./tests/product.test.js')
+
+// productTest.purchaseProduct('product:001', 10)
+
+
 //init database
 require('./dbs/init.mongodb.js');
 

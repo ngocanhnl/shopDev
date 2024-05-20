@@ -6,11 +6,11 @@
 
 POST {{url_dev}}/shop/signup
 Content-Type: application/json
-x-api-key: f6a33f9d291b860dfc71af849bd6b6a55a9af5ed3bbaa79f959fae26b95c2c4d927c14e40ce78dab017669704af3c4b99d2c5bcf59d2c033ea5e81a756731e3c
+x-api-key: 11aecee6cf6360ae6a51aa131cca14395694b730f76c551d4e8e488d4f2a47dc025fd5892071f0305cfa0fb7e59a0f249807a293b1340088756e55d590f7216c
 
 {
 
     "name": "nanh",
-    "email": "shop2@gmail.com",
+    "email": "shop02@gmail.com",
     "password": "12345"
 }
